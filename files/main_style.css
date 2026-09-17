@@ -283,7 +283,13 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
 
 .home-hero-title { font-size: 38px !important; }
 .home-hero-panel { box-sizing: border-box; }
+body.wsite-page-38651354413231727231 #wsite-content .imageGallery { display: none; }
+body.wsite-page-38651354413231727231 #wsite-content .switchboard-intro h2 { font-size: 28px; }
+body.wsite-page-index #navigation li#pg150020795234905758,
+body.wsite-page-index #navmobile li#pg150020795234905758 { display: none; }
 @media (max-width: 767px) {
  .home-hero-panel { padding: 26px 22px !important; }
  .home-hero-title { font-size: 30px !important; }
+ .switchboard-intro { padding: 24px 20px !important; }
+ .switchboard-directory > div { flex-basis: 100% !important; }
 }
