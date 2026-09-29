@@ -1,0 +1,29 @@
+---
+const { product } = Astro.props;
+---
+<article class="product-detail">
+  <div class="product-detail-header">
+    <p class="eyebrow">{product.brand} · {product.category}</p>
+    <h1>{product.name}</h1>
+    <p class="product-detail-summary">{product.summary}</p>
+  </div>
+  <div class="product-detail-grid">
+    <section class="product-detail-panel">
+      <p class="eyebrow">Product overview</p>
+      <h2>穩定的企業通訊，從合適的系統開始</h2>
+      <p>我們會依照現場線路、分機數量、使用習慣與未來擴充需求，協助評估設備與安裝方式。</p>
+      <ul>
+        <li>企業電話與分機系統規劃</li>
+        <li>既有設備檢測、維修與升級</li>
+        <li>IP、SIP 與傳統電話環境整合</li>
+      </ul>
+    </section>
+    <aside class="product-detail-aside">
+      <span class="product-card-brand">{product.brand}</span>
+      <h2>{product.note}</h2>
+      <p>需要確認規格或相容性？歡迎直接聯絡我們。</p>
+      <a class="button" href="/contact.html">詢問產品</a>
+    </aside>
+  </div>
+  <p class="legacy-reference">仍在使用舊版頁面？<a href={product.legacyHref}>查看原始產品頁</a></p>
+</article>
