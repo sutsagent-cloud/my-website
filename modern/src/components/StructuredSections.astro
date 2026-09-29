@@ -1,0 +1,8 @@
+---
+const props = Astro.props as { page: { title: string; images: string[]; sections: Array<{ title: string; body: string }> } };
+const { page } = props;
+---
+{page.images.length > 0 && <div class="migrated-gallery">{page.images.slice(0, 4).map((src) => <img src={src} alt={page.title} loading="lazy" />)}</div>}
+<div class="migrated-sections">
+  {page.sections.map((section) => <section class="migrated-section"><h2>{section.title}</h2>{section.body && <p>{section.body}</p>}</section>)}
+</div>

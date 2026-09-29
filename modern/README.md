@@ -12,7 +12,7 @@ npm run build
 
 `postbuild` 會將既有的 `uploads/`、`files/` 與 `apps/` 資產同步到 `dist/`，因此 build 後的目錄可以直接部署。
 
-首次搬遷或舊 HTML 有更新時，執行 `npm.cmd run migrate:legacy`，會把剩餘舊頁面快照寫入 `src/content/legacy/`。Astro 建置時只讀取這個 source，不再直接依賴 repository 根目錄的舊 HTML。
+剩餘舊頁面的標題、段落與圖片已轉成 `src/data/migrated-pages.json`，並由 `MigratedPage` 元件渲染。Astro 建置不再依賴 repository 根目錄的舊 HTML，也不再保留 legacy snapshot。
 
 正式部署前請設定 `SITE_URL`，例如 `SITE_URL=https://example.com`，用於產生 sitemap 與 robots.txt。`public/_redirects` 適用 Netlify；其他伺服器請依同一份對照表設定 301 redirect。
 
@@ -24,5 +24,5 @@ npm run build
 
 - 既有根目錄 HTML 保留作為相容來源，避免舊網址立即失效。
 - 新增頁面放在 `src/pages`，共用版型放在 `src/layouts`，網站設定放在 `src/data`。
-- 產品頁下一階段應把 HTML 內容轉為產品資料，再由 `ProductCard` / `ProductDetail` 元件渲染；完成後即可移除 `src/lib/legacy.ts`。
+- 產品頁目前由 `ProductCard` / `ProductDetail` 元件渲染；其他歷史頁面由 `MigratedPage` 搭配結構化 JSON 渲染。
 - 部署時需一併提供根目錄的 `uploads/` 資產，或將資產搬至 `modern/public/uploads/`。

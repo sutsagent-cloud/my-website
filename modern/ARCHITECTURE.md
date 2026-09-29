@@ -2,7 +2,7 @@
 
 ## 現況
 
-- 原始 57 個 HTML 保留在 repository 根目錄作為歷史來源；目前 55 個未正式元件化頁面已快照搬到 `src/content/legacy/`。
+- 原始 57 個 HTML 保留在 repository 根目錄作為歷史來源；55 個頁面的內容已轉成 `src/data/migrated-pages.json`，由 `MigratedPage` 元件渲染。
 - 每頁都重複完整導覽、內嵌 style 與版型標記；修改 header、選單或 footer 需要同步大量檔案。
 - 檔名同時使用數字 ID、品牌名稱、產品型號與 `_copy`，URL 缺少一致的資訊架構。
 - `files/main_style.css` 約 27 KB，包含大量 Weebly 專用 selector；根目錄頁面又有大量 inline style。
@@ -41,8 +41,8 @@ Astro 負責靜態輸出；內容頁不需要瀏覽器端框架，只有手機�
 
 ## 分階段執行
 
-1. 以 `scripts/migrate-legacy-content.mjs` 將舊頁面搬到 `src/content/legacy/`，由新版 layout 接管整站。
+1. 將舊頁面的標題、段落與圖片轉為結構化資料，由新版 layout 與 `MigratedPage` 元件接管整站。
 2. 建立產品資料 schema，先搬 Panasonic、NEC、Tecom 等重複度高的產品群組。
 3. 將品牌、產品分類與聯絡頁轉成乾淨的 Astro pages/components。
 4. 將圖片搬到 `modern/public/uploads/`，依 `products/{brand}/{model}/` 分類並建立 alt text。
-5. 建立舊網址 redirect map，檢查 sitemap、canonical、404 與行動版導覽後，再將 legacy snapshot 頁面逐頁替換成正式元件。
+5. 建立舊網址 redirect map，檢查 sitemap、canonical、404 與行動版導覽；頁面內容已不再依賴 legacy snapshot。

@@ -1,0 +1,10 @@
+---
+import StructuredSections from './StructuredSections.astro';
+const props = Astro.props as { page: { title: string; images: string[]; sections: Array<{ title: string; body: string }> } };
+const { page } = props;
+---
+<article class="migrated-page migrated-service">
+  <header class="migrated-page-header"><p class="eyebrow">Service</p><h1>{page.title}</h1><p class="product-detail-summary">從現場評估、設備規劃到安裝維護，建立適合企業使用的通訊環境。</p></header>
+  <StructuredSections page={page} />
+  <div class="migrated-cta"><strong>需要現場評估或工程規劃？</strong><a class="button" href="/contact.html">聯絡我們</a></div>
+</article>

@@ -1,0 +1,9 @@
+---
+import StructuredSections from './StructuredSections.astro';
+const props = Astro.props as { page: { title: string; images: string[]; sections: Array<{ title: string; body: string }> } };
+const { page } = props;
+---
+<article class="migrated-page migrated-information">
+  <header class="migrated-page-header"><p class="eyebrow">Information</p><h1>{page.title}</h1></header>
+  <StructuredSections page={page} />
+</article>

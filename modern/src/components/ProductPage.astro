@@ -1,0 +1,10 @@
+---
+import StructuredSections from './StructuredSections.astro';
+const props = Astro.props as { page: { title: string; images: string[]; sections: Array<{ title: string; body: string }> } };
+const { page } = props;
+---
+<article class="migrated-page migrated-product">
+  <header class="migrated-page-header"><p class="eyebrow">Product</p><h1>{page.title}</h1></header>
+  <StructuredSections page={page} />
+  <div class="migrated-cta"><strong>需要確認這項設備的規格或相容性？</strong><a class="button" href="/contact.html">詢問產品</a></div>
+</article>

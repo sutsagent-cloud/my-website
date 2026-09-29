@@ -1,0 +1,8 @@
+---
+import InformationPage from './InformationPage.astro';
+import ProductPage from './ProductPage.astro';
+import ServicePage from './ServicePage.astro';
+const props = Astro.props as { page: { kind: string; title: string; images: string[]; sections: Array<{ title: string; body: string }> } };
+const { page } = props;
+---
+{page.kind === 'product' ? <ProductPage page={page} /> : page.kind === 'service' ? <ServicePage page={page} /> : <InformationPage page={page} />}
