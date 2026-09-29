@@ -13,10 +13,10 @@ export const site = {
 } as const;
 
 export const services = [
-  { title: '電話總機與交換機', description: '依照企業規模與使用需求，規劃傳統、IP-PBX、SIP 與 VoIP 通訊系統。', href: '/38651354413231727231-201322556327231.html', icon: '01' },
-  { title: '網路與弱電工程', description: '從網路架設、機房整理到設備整合，讓企業通訊穩定、清楚而且容易維護。', href: '/2160837002.html', icon: '02' },
-  { title: '監視與門禁系統', description: '整合監視器、錄影設備、門禁、指紋與感應設備，提升場域安全管理。', href: '/30435352223537320633.html', icon: '03' },
-  { title: '語音、錄音與會議設備', description: '提供語音信箱、錄音、視訊會議、投影與企業協作設備的規劃與維護。', href: '/3548638899--3763638899.html', icon: '04' }
+  { title: '電話總機與交換機', description: '依照企業規模與使用需求，規劃傳統、IP-PBX、SIP 與 VoIP 通訊系統。', href: '/categories/phone-systems.html', icon: '01' },
+  { title: '網路與弱電工程', description: '從網路架設、機房整理到設備整合，讓企業通訊穩定、清楚而且容易維護。', href: '/categories/networking.html', icon: '02' },
+  { title: '監視與門禁系統', description: '整合監視器、錄影設備、門禁、指紋與感應設備，提升場域安全管理。', href: '/categories/security.html', icon: '03' },
+  { title: '語音、錄音與會議設備', description: '提供語音信箱、錄音、視訊會議、投影與企業協作設備的規劃與維護。', href: '/categories/voice-and-video.html', icon: '04' }
 ] as const;
 
 export const products = [
@@ -38,4 +38,13 @@ export const brands = [
   { slug: 'tecom', name: 'Tecom', description: 'Tecom 傳統交換機與 IP 通訊設備。' },
   { slug: 'uniphone', name: 'Uniphone', description: 'Uniphone 企業電話系統與終端設備。' },
   { slug: 'other', name: '其他品牌', description: '其他品牌與既有系統的設備選擇。' }
+] as const;
+
+export const categories = [
+  { slug: 'phone-systems', name: '電話總機與交換機', description: '傳統電話總機、IP-PBX、SIP 與企業交換機系統。', legacyHref: '/38651354413231727231-201322556327231.html', service: '電話總機與分機系統規劃、安裝、維修與升級。' },
+  { slug: 'networking', name: '網路與弱電工程', description: '網路架設、機房整理與企業弱電設備整合。', legacyHref: '/2160837002.html', service: '從現場評估、佈線到設備整合，建立容易維護的基礎環境。' },
+  { slug: 'security', name: '監視與門禁系統', description: '監視器、錄影設備、門禁、指紋與感應設備。', legacyHref: '/30435352223537320633.html', service: '依照場域需求規劃影像監控與進出管理方案。' },
+  { slug: 'voice-and-video', name: '語音、錄音與會議設備', description: '語音信箱、錄音、視訊會議、投影與協作設備。', legacyHref: '/3548638899--3763638899.html', service: '協助企業改善會議、錄音與日常溝通效率。' },
+  { slug: 'access-control', name: '門禁系統', description: '感應式門禁、指紋機、陽極鎖與出入管理設備。', legacyHref: '/38272311053199532113.html', service: '為辦公室與公共場域建立清楚可控的出入流程。' },
+  { slug: 'surveillance', name: '監視設備', description: '攝影機、錄影主機與周邊監控設備。', legacyHref: '/30435352223537320633.html', service: '提供監視設備選型、安裝與既有系統維護。' }
 ] as const;

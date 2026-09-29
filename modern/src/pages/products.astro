@@ -10,6 +10,7 @@ import { brands, products } from '../data/site';
       <SectionHeading eyebrow="Products" title="電話總機與企業通訊設備" description="依照品牌與設備類型整理現有產品；產品細節頁將持續遷移至新的資料結構。" />
       <div class="product-grid">{products.map((product) => <ProductCard product={product} />)}</div>
       <div class="brand-links"><p class="eyebrow">Browse by brand</p>{brands.map((brand) => <a href={`/brands/${brand.slug}.html`}>{brand.name} →</a>)}</div>
+      <p class="legacy-reference"><a href="/categories.html">瀏覽服務分類 →</a></p>
     </section>
   </article>
 </SiteLayout>

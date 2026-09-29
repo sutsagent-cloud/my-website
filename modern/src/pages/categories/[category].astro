@@ -1,0 +1,26 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { categories, products } from '../../data/site';
+
+export function getStaticPaths() {
+  return categories.map((category) => ({
+    params: { category: category.slug },
+    props: { category, products: category.slug === 'phone-systems' ? products : [] }
+  }));
+}
+
+const { category, products: categoryProducts } = Astro.props;
+---
+<SiteLayout title={category.name} activeHref="/products.html">
+  <article class="landing-content">
+    <section class="section">
+      <SectionHeading eyebrow="Solution" title={category.name} description={category.description} />
+      <div class="category-intro"><p>{category.service}</p><a class="button" href="/contact.html">詢問規劃</a></div>
+      {categoryProducts.length > 0 && <><h2 class="subsection-title">相關產品</h2><div class="product-grid">{categoryProducts.map((product) => <ProductCard product={product} />)}</div></>}
+      <div class="legacy-note"><p>此分類的完整歷史內容仍在搬遷中。</p><a href={category.legacyHref}>查看原始服務頁 →</a></div>
+      <p class="legacy-reference"><a href="/categories.html">← 返回服務分類</a></p>
+    </section>
+  </article>
+</SiteLayout>

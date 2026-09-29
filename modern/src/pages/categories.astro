@@ -1,0 +1,15 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { categories } from '../data/site';
+---
+<SiteLayout title="服務分類" activeHref="/products.html">
+  <article class="landing-content">
+    <section class="section">
+      <SectionHeading eyebrow="Solutions" title="依照需求尋找通訊與弱電方案" description="將原有網站的服務分類整理成一致、容易理解的資訊架構。" />
+      <div class="category-grid">
+        {categories.map((category) => <a class="category-card" href={`/categories/${category.slug}.html`}><span class="product-card-brand">Solution</span><h2>{category.name}</h2><p>{category.description}</p><span class="product-card-link">查看服務內容 →</span></a>)}
+      </div>
+    </section>
+  </article>
+</SiteLayout>

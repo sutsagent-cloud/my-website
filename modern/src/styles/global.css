@@ -66,6 +66,16 @@ a:hover { color: #0a4e5a; }
 .brand-links { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 42px; padding-top: 24px; border-top: 1px solid #e1eaee; }
 .brand-links .eyebrow { width: 100%; margin-bottom: 2px; }
 .brand-links a { padding: 8px 12px; background: #eaf5f6; border-radius: 8px; font-size: .88rem; font-weight: 700; }
+.category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.category-card { display: block; padding: 28px; color: #17324d; background: white; border: 1px solid #e1eaee; border-radius: 16px; }
+.category-card:hover { color: #17324d; border-color: #a8d1d7; box-shadow: 0 14px 30px rgba(26,61,80,.1); }
+.category-card h2 { margin: 16px 0 8px; color: #17324d; font-size: 1.3rem; }
+.category-card p { margin: 0; color: #6b8293; }
+.category-intro { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 42px; padding: 24px 28px; background: #eaf5f6; border-radius: 14px; }
+.category-intro p { margin: 0; color: #466174; }
+.subsection-title { margin: 0 0 18px; color: #17324d; }
+.legacy-note { margin-top: 48px; padding: 20px 24px; background: #fff; border: 1px dashed #bdd0d8; border-radius: 12px; color: #6b8293; }
+.legacy-note p { margin: 0 0 4px; }
 .product-detail { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
 .product-detail-header { padding: 70px 0 48px; }
 .product-detail-header h1 { max-width: 760px; margin: 0 0 16px; color: #17324d; font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1.12; letter-spacing: -.05em; }
@@ -94,6 +104,9 @@ a:hover { color: #0a4e5a; }
   .section { width: min(100% - 24px, 1120px); padding-top: 56px; }
   .service-grid, .product-grid, .contact-grid, .split-section { grid-template-columns: 1fr; }
   .brand-grid { grid-template-columns: 1fr; }
+  .category-grid { grid-template-columns: 1fr; }
+  .category-intro { display: block; }
+  .category-intro .button { margin-top: 16px; }
   .product-detail { width: min(100% - 24px, 1120px); }
   .product-detail-header { padding: 44px 0 30px; }
   .product-detail-grid { grid-template-columns: 1fr; }
