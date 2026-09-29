@@ -12,7 +12,13 @@ npm run build
 
 `postbuild` 會將既有的 `uploads/`、`files/` 與 `apps/` 資產同步到 `dist/`，因此 build 後的目錄可以直接部署。
 
+首次搬遷或舊 HTML 有更新時，執行 `npm.cmd run migrate:legacy`，會把剩餘舊頁面快照寫入 `src/content/legacy/`。Astro 建置時只讀取這個 source，不再直接依賴 repository 根目錄的舊 HTML。
+
 正式部署前請設定 `SITE_URL`，例如 `SITE_URL=https://example.com`，用於產生 sitemap 與 robots.txt。`public/_redirects` 適用 Netlify；其他伺服器請依同一份對照表設定 301 redirect。
+
+## GitHub Pages
+
+專案根目錄已提供 `.github/workflows/deploy.yml`，會在 `main` push 後自動建置並部署到 GitHub Pages。此 repository 的預設 project site URL 是 `https://sutsagent-cloud.github.io/my-website/`；若改用 custom domain，請同步調整 workflow 的 `SITE_URL`，並移除或修改 `astro.config.mjs` 的 `base` 設定。
 
 ## 遷移原則
 
