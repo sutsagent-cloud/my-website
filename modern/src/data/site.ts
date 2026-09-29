@@ -31,3 +31,11 @@ export const products = [
   { slug: 'uniphone-isdk-616', name: 'Uniphone ISDK 616', brand: 'Uniphone', category: '電話總機', href: '/products/uniphone-isdk-616.html', legacyHref: '/3287930431-uniphone.html', note: '電話系統', summary: '提供企業基本分機、總機與內部通訊管理功能。' },
   { slug: 'vb-9250', name: 'VB-9250', brand: '其他品牌', category: '電話總機', href: '/products/vb-9250.html', legacyHref: '/vb-9250.html', note: '標準型電話機', summary: '標準型企業電話設備，適合既有系統維護與替換需求。' }
 ] as const;
+
+export const brands = [
+  { slug: 'panasonic', name: 'Panasonic', description: 'Panasonic 企業電話與數位通訊系統。' },
+  { slug: 'nec', name: 'NEC', description: 'NEC 企業 UC 與電話總機解決方案。' },
+  { slug: 'tecom', name: 'Tecom', description: 'Tecom 傳統交換機與 IP 通訊設備。' },
+  { slug: 'uniphone', name: 'Uniphone', description: 'Uniphone 企業電話系統與終端設備。' },
+  { slug: 'other', name: '其他品牌', description: '其他品牌與既有系統的設備選擇。' }
+] as const;

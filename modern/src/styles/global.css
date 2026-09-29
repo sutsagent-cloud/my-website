@@ -58,6 +58,14 @@ a:hover { color: #0a4e5a; }
 .contact-card dl { margin: 0; }
 .contact-card dt { margin-top: 18px; color: #6b8293; font-size: .82rem; }
 .contact-card dd { margin: 2px 0 0; color: #17324d; font-weight: 700; }
+.brand-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.brand-card { display: block; padding: 28px; color: #17324d; background: white; border: 1px solid #e1eaee; border-radius: 16px; }
+.brand-card:hover { color: #17324d; border-color: #a8d1d7; box-shadow: 0 14px 30px rgba(26,61,80,.1); }
+.brand-card h2 { margin: 16px 0 8px; color: #17324d; }
+.brand-card p { margin: 0; color: #6b8293; }
+.brand-links { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 42px; padding-top: 24px; border-top: 1px solid #e1eaee; }
+.brand-links .eyebrow { width: 100%; margin-bottom: 2px; }
+.brand-links a { padding: 8px 12px; background: #eaf5f6; border-radius: 8px; font-size: .88rem; font-weight: 700; }
 .product-detail { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
 .product-detail-header { padding: 70px 0 48px; }
 .product-detail-header h1 { max-width: 760px; margin: 0 0 16px; color: #17324d; font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1.12; letter-spacing: -.05em; }
@@ -85,6 +93,7 @@ a:hover { color: #0a4e5a; }
   .hero { padding-top: 64px; }
   .section { width: min(100% - 24px, 1120px); padding-top: 56px; }
   .service-grid, .product-grid, .contact-grid, .split-section { grid-template-columns: 1fr; }
+  .brand-grid { grid-template-columns: 1fr; }
   .product-detail { width: min(100% - 24px, 1120px); }
   .product-detail-header { padding: 44px 0 30px; }
   .product-detail-grid { grid-template-columns: 1fr; }

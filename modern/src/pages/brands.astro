@@ -1,0 +1,15 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { brands } from '../data/site';
+---
+<SiteLayout title="品牌介紹" activeHref="/products.html">
+  <article class="landing-content">
+    <section class="section">
+      <SectionHeading eyebrow="Brands" title="依照品牌尋找適合的設備" description="整理目前網站中的主要品牌與產品系列，方便快速瀏覽。" />
+      <div class="brand-grid">
+        {brands.map((brand) => <a class="brand-card" href={`/brands/${brand.slug}.html`}><span class="product-card-brand">Brand</span><h2>{brand.name}</h2><p>{brand.description}</p><span class="product-card-link">查看品牌產品 →</span></a>)}
+      </div>
+    </section>
+  </article>
+</SiteLayout>

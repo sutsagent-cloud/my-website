@@ -1,0 +1,25 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { brands, products } from '../../data/site';
+
+export function getStaticPaths() {
+  return brands.map((brand) => ({
+    params: { brand: brand.slug },
+    props: { brand, products: products.filter((product) => product.brand === brand.name || (brand.slug === 'other' && product.brand === '其他品牌')) }
+  }));
+}
+
+const { brand, products: brandProducts } = Astro.props;
+---
+<SiteLayout title={`${brand.name}產品`} activeHref="/products.html">
+  <article class="landing-content">
+    <section class="section">
+      <SectionHeading eyebrow="Brand" title={brand.name} description={brand.description} />
+      <div class="product-grid">{brandProducts.map((product) => <ProductCard product={product} />)}</div>
+      {brandProducts.length === 0 && <p>目前沒有整理完成的產品資料。</p>}
+      <p class="legacy-reference"><a href="/brands.html">← 返回品牌列表</a></p>
+    </section>
+  </article>
+</SiteLayout>
