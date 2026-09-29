@@ -2,7 +2,7 @@
 
 ## 現況
 
-- 原始 57 個 HTML 保留在 repository 根目錄作為歷史來源；55 個頁面的內容已轉成 `src/data/migrated-pages.json`，由 `MigratedPage` 元件渲染。
+- 原始 57 個 HTML 已封存至 `archive/legacy-html/`；55 個頁面的內容已轉成 `src/data/migrated-pages.json`，由 `MigratedPage` 元件渲染。
 - 每頁都重複完整導覽、內嵌 style 與版型標記；修改 header、選單或 footer 需要同步大量檔案。
 - 檔名同時使用數字 ID、品牌名稱、產品型號與 `_copy`，URL 缺少一致的資訊架構。
 - `files/main_style.css` 約 27 KB，包含大量 Weebly 專用 selector；根目錄頁面又有大量 inline style。
@@ -18,7 +18,7 @@ modern/
     layouts/    SiteLayout、產品／文章版型
     components/ Header、Footer、ProductCard、Breadcrumb
     pages/      首頁、分類頁、產品頁、聯絡頁
-    lib/        舊頁面匯入與資料轉換工具（過渡期）
+    lib/        路由、SEO 與網站共用工具
     styles/     design tokens 與全站樣式
 ```
 
