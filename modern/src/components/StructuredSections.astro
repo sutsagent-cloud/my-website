@@ -1,8 +1,11 @@
 ---
+import { getImageSources } from '../lib/images';
 const props = Astro.props as { page: { title: string; images: string[]; sections: Array<{ title: string; body: string }> } };
 const { page } = props;
+const imageSources = getImageSources(page.images);
 ---
-{page.images.length > 0 && <div class="migrated-gallery">{page.images.slice(0, 4).map((src) => <img src={src} alt={page.title} loading="lazy" />)}</div>}
+{imageSources.length > 0 && <div class="migrated-gallery">{imageSources.map((src) => <img src={src} alt={page.title} loading="lazy" />)}</div>}
+{page.images.length > 0 && imageSources.length === 0 && <div class="image-placeholder" role="img" aria-label={`${page.title} 圖片整理中`}><span>產品圖片整理中</span><small>歡迎聯絡我們確認設備與規格</small></div>}
 <div class="migrated-sections">
   {page.sections.map((section) => <section class="migrated-section"><h2>{section.title}</h2>{section.body && <p>{section.body}</p>}</section>)}
 </div>

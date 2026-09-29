@@ -20,16 +20,16 @@ export const services = [
 ] as const;
 
 export const products = [
-  { slug: 'panasonic-kx-tda50', name: 'Panasonic KX-TDA50', brand: 'Panasonic', category: '電話總機', href: '/products/panasonic-kx-tda50.html', legacyHref: '/kx-tda50.html', note: '企業電話系統', summary: '適合中小型企業的數位電話系統，支援語音信箱、IP 整合與企業通訊擴充。' },
-  { slug: 'panasonic-kx-tda100d', name: 'Panasonic KX-TDA100D', brand: 'Panasonic', category: '電話總機', href: '/products/panasonic-kx-tda100d.html', legacyHref: '/kx-tda100d.html', note: '數位整合通訊', summary: '整合數位訊號、語音信箱與企業電話功能的模組化交換機。' },
-  { slug: 'panasonic-kx-tde200', name: 'Panasonic KX-TDE200', brand: 'Panasonic', category: '電話總機', href: '/products/panasonic-kx-tde200.html', legacyHref: '/kx-tde200.html', note: 'IP 通訊系統', summary: '支援 IP 網路與傳統電話介面的企業通訊平台，適合持續擴充的組織。' },
-  { slug: 'nec-sl1000', name: 'NEC SL1000', brand: 'NEC', category: '電話總機', href: '/products/nec-sl1000.html', legacyHref: '/sl1000.html', note: '企業 UC 平台', summary: '面向企業通訊與協作需求的整合平台，支援多種終端與網路通訊。' },
-  { slug: 'nec-sl2100', name: 'NEC SL2100', brand: 'NEC', category: '電話總機', href: '/products/nec-sl2100.html', legacyHref: '/sl2100.html', note: '企業通訊系統', summary: '具備彈性擴充能力的企業電話系統，適用於多種辦公場域。' },
+  { slug: 'panasonic-kx-tda50', name: 'Panasonic KX-TDA50', brand: 'Panasonic', category: '電話總機', href: '/products/panasonic-kx-tda50.html', legacyHref: '/kx-tda50.html', image: '/uploads/8/5/4/0/85406354/tda100d_4.jpg', note: '企業電話系統', summary: '適合中小型企業的數位電話系統，支援語音信箱、IP 整合與企業通訊擴充。' },
+  { slug: 'panasonic-kx-tda100d', name: 'Panasonic KX-TDA100D', brand: 'Panasonic', category: '電話總機', href: '/products/panasonic-kx-tda100d.html', legacyHref: '/kx-tda100d.html', image: '/uploads/8/5/4/0/85406354/tda100d_1.jpg', note: '數位整合通訊', summary: '整合數位訊號、語音信箱與企業電話功能的模組化交換機。' },
+  { slug: 'panasonic-kx-tde200', name: 'Panasonic KX-TDE200', brand: 'Panasonic', category: '電話總機', href: '/products/panasonic-kx-tde200.html', legacyHref: '/kx-tde200.html', image: '/uploads/8/5/4/0/85406354/286799539_1.jpg', note: 'IP 通訊系統', summary: '支援 IP 網路與傳統電話介面的企業通訊平台，適合持續擴充的組織。' },
+  { slug: 'nec-sl1000', name: 'NEC SL1000', brand: 'NEC', category: '電話總機', href: '/products/nec-sl1000.html', legacyHref: '/sl1000.html', image: '/uploads/8/5/4/0/85406354/nec-sl1000_3.jpg', note: '企業 UC 平台', summary: '面向企業通訊與協作需求的整合平台，支援多種終端與網路通訊。' },
+  { slug: 'nec-sl2100', name: 'NEC SL2100', brand: 'NEC', category: '電話總機', href: '/products/nec-sl2100.html', legacyHref: '/sl2100.html', image: '/uploads/8/5/4/0/85406354/nec-sl2100_orig.jpg', note: '企業通訊系統', summary: '具備彈性擴充能力的企業電話系統，適用於多種辦公場域。' },
   { slug: 'tecom-ip50', name: 'Tecom IP50', brand: 'Tecom', category: 'IP 電話', href: '/products/tecom-ip50.html', legacyHref: '/ip50.html', note: 'IP 交換機', summary: '適合 IP 電話環境的通訊設備，協助企業整合網路與語音服務。' },
   { slug: 'tecom-ip320a', name: 'Tecom IP320A', brand: 'Tecom', category: 'IP 電話', href: '/products/tecom-ip320a.html', legacyHref: '/ip320a.html', note: 'IP 通訊設備', summary: '提供企業 IP 通訊部署所需的穩定連線與電話功能。' },
-  { slug: 'tecom-dx616', name: 'Tecom DX616', brand: 'Tecom', category: '電話總機', href: '/products/tecom-dx616.html', legacyHref: '/dx616.html', note: '傳統交換機', summary: '經典型企業交換機，適合既有電話線路與辦公室通訊需求。' },
-  { slug: 'uniphone-isdk-616', name: 'Uniphone ISDK 616', brand: 'Uniphone', category: '電話總機', href: '/products/uniphone-isdk-616.html', legacyHref: '/3287930431-uniphone.html', note: '電話系統', summary: '提供企業基本分機、總機與內部通訊管理功能。' },
-  { slug: 'vb-9250', name: 'VB-9250', brand: '其他品牌', category: '電話總機', href: '/products/vb-9250.html', legacyHref: '/vb-9250.html', note: '標準型電話機', summary: '標準型企業電話設備，適合既有系統維護與替換需求。' }
+  { slug: 'tecom-dx616', name: 'Tecom DX616', brand: 'Tecom', category: '電話總機', href: '/products/tecom-dx616.html', legacyHref: '/dx616.html', image: '/uploads/8/5/4/0/85406354/e2982e49-d98b-43ad-9b41-d23ede7b302a_orig.jpg', note: '傳統交換機', summary: '經典型企業交換機，適合既有電話線路與辦公室通訊需求。' },
+  { slug: 'uniphone-isdk-616', name: 'Uniphone ISDK 616', brand: 'Uniphone', category: '電話總機', href: '/products/uniphone-isdk-616.html', legacyHref: '/3287930431-uniphone.html', image: '/uploads/8/5/4/0/85406354/415037471.jpg', note: '電話系統', summary: '提供企業基本分機、總機與內部通訊管理功能。' },
+  { slug: 'vb-9250', name: 'VB-9250', brand: '其他品牌', category: '電話總機', href: '/products/vb-9250.html', legacyHref: '/vb-9250.html', image: '/uploads/8/5/4/0/85406354/21311198335041-683-m_orig.png', note: '標準型電話機', summary: '標準型企業電話設備，適合既有系統維護與替換需求。' }
 ] as const;
 
 export const brands = [

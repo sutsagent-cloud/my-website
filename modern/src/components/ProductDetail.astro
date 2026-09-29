@@ -1,5 +1,7 @@
 ---
+import { getImageSources } from '../lib/images';
 const { product } = Astro.props;
+const imageSources = getImageSources(product.images ?? [product.image].filter(Boolean));
 ---
 <article class="product-detail">
   <div class="product-detail-header">
@@ -7,6 +9,7 @@ const { product } = Astro.props;
     <h1>{product.name}</h1>
     <p class="product-detail-summary">{product.summary}</p>
   </div>
+  {imageSources.length > 0 ? <div class="product-detail-gallery">{imageSources.map((src) => <img src={src} alt={product.name} loading="lazy" />)}</div> : <div class="image-placeholder product-detail-placeholder" role="img" aria-label={`${product.name} 圖片整理中`}><span>產品圖片整理中</span><small>歡迎聯絡我們確認設備與規格</small></div>}
   <div class="product-detail-grid">
     <section class="product-detail-panel">
       <p class="eyebrow">Product overview</p>

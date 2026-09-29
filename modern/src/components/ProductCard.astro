@@ -2,6 +2,7 @@
 const { product } = Astro.props;
 ---
 <a class="product-card" href={product.href}>
+  {product.image ? <img class="product-card-image" src={product.image} alt={product.name} loading="lazy" /> : <div class="product-card-image product-card-image-placeholder" aria-hidden="true">{product.brand.slice(0, 1)}</div>}
   <span class="product-card-brand">{product.brand}</span>
   <h3>{product.name}</h3>
   <p>{product.note}</p>

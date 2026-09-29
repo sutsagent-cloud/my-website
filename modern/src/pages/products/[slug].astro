@@ -2,9 +2,13 @@
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import ProductDetail from '../../components/ProductDetail.astro';
 import { products } from '../../data/site';
+import migratedPages from '../../data/migrated-pages.json';
 
 export function getStaticPaths() {
-  return products.map((product) => ({ params: { slug: product.slug }, props: { product } }));
+  return products.map((product) => {
+    const migrated = migratedPages.find((page) => page.file === product.legacyHref.replace(/^\//, ''));
+    return { params: { slug: product.slug }, props: { product: { ...product, images: migrated?.images ?? [] } } };
+  });
 }
 
 const { product } = Astro.props;
