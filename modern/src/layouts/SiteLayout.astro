@@ -1,0 +1,52 @@
+---
+import { site } from '../data/site';
+import '../styles/global.css';
+const { title, description = site.description, activeHref = '' } = Astro.props;
+---
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/uploads/8/5/4/0/85406354/248852564.png" />
+    <title>{title}｜{site.name}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/index.html" aria-label={`${site.name}首頁`}>
+          <span class="brand-mark" aria-hidden="true">興</span>
+          <span>{site.shortName}<small>企業通訊整合</small></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">選單</button>
+        <nav id="site-navigation" class="site-nav" aria-label="主要導覽">
+          {site.navigation.map((item) => (
+            <a class:list={{ active: item.href === activeHref }} href={item.href}>{item.label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+    <main class="page-shell">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div><strong>{site.name}</strong><p>{site.description}</p></div>
+        <a href="tel:+886223417788">{site.phone}</a>
+      </div>
+    </footer>
+    <script>
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('#site-navigation');
+      toggle?.addEventListener('click', () => {
+        const open = document.body.classList.toggle('nav-open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+        document.body.classList.remove('nav-open');
+        toggle?.setAttribute('aria-expanded', 'false');
+      }));
+    </script>
+  </body>
+</html>

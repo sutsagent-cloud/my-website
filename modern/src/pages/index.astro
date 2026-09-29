@@ -1,0 +1,12 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { getLegacyPages } from '../lib/legacy';
+
+const page = getLegacyPages().find((item) => item.isHome);
+if (!page) throw new Error('首頁 index.html 不存在');
+---
+<SiteLayout title={page.title} activeHref="/index.html">
+  <article class="legacy-content home-content">
+    <div class="content-inner" set:html={page.content} />
+  </article>
+</SiteLayout>

@@ -1,0 +1,18 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { getLegacyPages } from '../lib/legacy';
+
+export function getStaticPaths() {
+  return getLegacyPages().filter((page) => !page.isHome).map((page) => ({
+    params: { slug: page.slug.replace(/\.html$/i, '') },
+    props: { page }
+  }));
+}
+
+const { page } = Astro.props;
+---
+<SiteLayout title={page.title} activeHref={page.isHome ? '/index.html' : `/${page.file}`}>
+  <article class:list={{ 'legacy-content': true, 'home-content': page.isHome }}>
+    <div class="content-inner" set:html={page.content} />
+  </article>
+</SiteLayout>
