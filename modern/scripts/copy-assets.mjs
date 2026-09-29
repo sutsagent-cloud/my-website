@@ -27,8 +27,8 @@ if (process.env.GITHUB_ACTIONS) {
   for (const file of htmlFiles) {
     const source = await readFile(file, 'utf8');
     const updated = source
-      .replace(/(href|src|action)="\/(?!\/)/g, `$1="${base}/`)
-      .replace(/url\((['"])\/(?!\/)/g, `url($1${base}/`);
+      .replace(/(href|src|action)="\/([^"]*)"/g, (match, attribute, target) => target.startsWith('my-website/') ? match : `${attribute}="${base}/${target}"`)
+      .replace(/url\((['"])\/([^'")]+)\1\)/g, (match, quote, target) => target.startsWith('my-website/') ? match : `url(${quote}${base}/${target}${quote})`);
     await writeFile(file, updated, 'utf8');
   }
 }
