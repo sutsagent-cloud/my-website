@@ -10,6 +10,8 @@ npm run dev
 npm run build
 ```
 
+`postbuild` 會將既有的 `uploads/`、`files/` 與 `apps/` 資產同步到 `dist/`，因此 build 後的目錄可以直接部署。
+
 ## 遷移原則
 
 - 既有根目錄 HTML 保留作為相容來源，避免舊網址立即失效。

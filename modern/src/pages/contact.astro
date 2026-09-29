@@ -1,0 +1,16 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { site } from '../data/site';
+---
+<SiteLayout title="聯絡我們" activeHref="/contact.html">
+  <article class="landing-content">
+    <section class="section">
+      <SectionHeading eyebrow="Contact" title="讓我們協助你的通訊系統" description="歡迎說明目前的設備、使用人數與需求，我們會協助你評估合適方案。" />
+      <div class="contact-grid">
+        <div class="contact-card"><h2>聯絡方式</h2><dl><dt>公司代表電話</dt><dd><a href="tel:+886223417788">{site.phone}</a></dd><dt>公司地址</dt><dd>台北市南昌路二段 7 號 1 樓</dd><dt>營業時間</dt><dd>週一至週六 08:30–20:30</dd></dl></div>
+        <div class="info-panel"><h2>需要現場評估？</h2><p>電話總機、網路架設、監視與門禁工程，都可以先來電說明現況。</p><a class="button" href="tel:+886223417788">立即來電</a></div>
+      </div>
+    </section>
+  </article>
+</SiteLayout>

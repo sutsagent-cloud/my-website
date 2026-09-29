@@ -1,12 +1,34 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
-import { getLegacyPages } from '../lib/legacy';
-
-const page = getLegacyPages().find((item) => item.isHome);
-if (!page) throw new Error('首頁 index.html 不存在');
+import SectionHeading from '../components/SectionHeading.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { products, services, site } from '../data/site';
 ---
-<SiteLayout title={page.title} activeHref="/index.html">
-  <article class="legacy-content home-content">
-    <div class="content-inner" set:html={page.content} />
+<SiteLayout title="首頁" activeHref="/index.html">
+  <article class="home-content">
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">專業通訊工程服務</p>
+        <h1>電話總機，是企業溝通的核心</h1>
+        <p class="hero-lede">交換機、IP-PBX、VoIP、SIP Phone，從規劃、安裝到維修升級，協助企業建立穩定清楚的通訊系統。</p>
+        <a class="button" href="/products.html">瀏覽產品 <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+    <section class="section">
+      <SectionHeading eyebrow="What we do" title="讓通訊與弱電設備穩定運作" description={site.description} />
+      <div class="service-grid">
+        {services.map((service) => <a class="service-card" href={service.href}><span class="service-number">{service.icon}</span><h3>{service.title}</h3><p>{service.description}</p></a>)}
+      </div>
+    </section>
+    <section class="section">
+      <SectionHeading eyebrow="Featured products" title="依照品牌、系統與使用需求選擇" description="保留既有產品資料，逐步整理為可搜尋、可維護的產品型錄。" />
+      <div class="product-grid">
+        {products.slice(0, 8).map((product) => <ProductCard product={product} />)}
+      </div>
+    </section>
+    <section class="section split-section">
+      <div><SectionHeading eyebrow="Since 1989" title="從規劃到維護，陪伴企業長期使用" description="我們提供企業通訊、網路與弱電設備的整合服務，重視現場需求與後續維護。" /><a class="button button-secondary" href="/contact.html">聯絡我們</a></div>
+      <div class="info-panel"><h2>需要協助選擇設備？</h2><p>告訴我們使用人數、場地與既有設備，我們會協助你找到合適的通訊方案。</p><a class="button" href="tel:+886223417788">{site.phone}</a></div>
+    </section>
   </article>
 </SiteLayout>

@@ -1,0 +1,9 @@
+---
+const { product } = Astro.props;
+---
+<a class="product-card" href={product.href}>
+  <span class="product-card-brand">{product.brand}</span>
+  <h3>{product.name}</h3>
+  <p>{product.note}</p>
+  <span class="product-card-link">查看產品 <span aria-hidden="true">→</span></span>
+</a>

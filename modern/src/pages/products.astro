@@ -1,0 +1,14 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { products } from '../data/site';
+---
+<SiteLayout title="產品介紹" activeHref="/products.html">
+  <article class="landing-content">
+    <section class="section">
+      <SectionHeading eyebrow="Products" title="電話總機與企業通訊設備" description="依照品牌與設備類型整理現有產品；產品細節頁將持續遷移至新的資料結構。" />
+      <div class="product-grid">{products.map((product) => <ProductCard product={product} />)}</div>
+    </section>
+  </article>
+</SiteLayout>
