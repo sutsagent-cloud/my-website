@@ -11,6 +11,16 @@ const { title, description = site.description, activeHref = '' } = Astro.props;
     <meta name="description" content={description} />
     <link rel="icon" href="/uploads/8/5/4/0/85406354/248852564.png" />
     <title>{title}｜{site.name}</title>
+    {site.googleAnalyticsId && <>
+      <!-- Google tag (gtag.js) -->
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${site.googleAnalyticsId}`}></script>
+      <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-T1QK13TZ6S');
+      </script>
+    </>}
   </head>
   <body>
     <header class="site-header">

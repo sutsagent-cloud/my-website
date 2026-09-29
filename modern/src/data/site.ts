@@ -3,6 +3,7 @@ export const site = {
   shortName: '興裕通訊',
   description: '電話總機、交換機、網路、監視、門禁與企業通訊整合服務。',
   phone: '(02) 2341-7788',
+  googleAnalyticsId: 'G-T1QK13TZ6S',
   navigation: [
     { label: '公司簡介', href: '/index.html' },
     { label: '電話總機', href: '/38651354413231727231-201322556327231.html' },
