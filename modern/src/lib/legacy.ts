@@ -36,7 +36,7 @@ function extractContent(html: string) {
 
 export function getLegacyPages(): LegacyPage[] {
   return fs.readdirSync(legacyRoot)
-    .filter((file) => file.endsWith('.html'))
+    .filter((file) => file.endsWith('.html') && file !== 'blog.html')
     .sort()
     .map((file) => {
       const html = fs.readFileSync(path.join(legacyRoot, file), 'utf8');

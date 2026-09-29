@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { blogPosts } from '../data/site';
+---
+<SiteLayout title="Blog" activeHref="/blog.html">
+  <article class="landing-content">
+    <section class="section">
+      <SectionHeading eyebrow="Blog" title="企業通訊與弱電工程知識" description="整理產品選擇、系統規劃與維護實務，協助你做出更合適的設備決策。" />
+      <div class="blog-grid">{blogPosts.map((post) => <article class="blog-card"><p class="eyebrow">{post.category} · {post.date}</p><h2>{post.title}</h2><p>{post.excerpt}</p></article>)}</div>
+    </section>
+  </article>
+</SiteLayout>

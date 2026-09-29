@@ -1,0 +1,9 @@
+---
+const props = Astro.props as { category: { service: string; features: readonly string[] } };
+const { category } = props;
+---
+<div class="category-detail">
+  <div class="category-intro"><p>{category.service}</p><a class="button" href="/contact.html">詢問規劃</a></div>
+  <h2 class="subsection-title">服務內容</h2>
+  <ul class="feature-list">{category.features.map((feature) => <li>{feature}</li>)}</ul>
+</div>

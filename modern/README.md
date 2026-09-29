@@ -12,6 +12,8 @@ npm run build
 
 `postbuild` 會將既有的 `uploads/`、`files/` 與 `apps/` 資產同步到 `dist/`，因此 build 後的目錄可以直接部署。
 
+正式部署前請設定 `SITE_URL`，例如 `SITE_URL=https://example.com`，用於產生 sitemap 與 robots.txt。`public/_redirects` 適用 Netlify；其他伺服器請依同一份對照表設定 301 redirect。
+
 ## 遷移原則
 
 - 既有根目錄 HTML 保留作為相容來源，避免舊網址立即失效。

@@ -41,10 +41,14 @@ export const brands = [
 ] as const;
 
 export const categories = [
-  { slug: 'phone-systems', name: '電話總機與交換機', description: '傳統電話總機、IP-PBX、SIP 與企業交換機系統。', legacyHref: '/38651354413231727231-201322556327231.html', service: '電話總機與分機系統規劃、安裝、維修與升級。' },
-  { slug: 'networking', name: '網路與弱電工程', description: '網路架設、機房整理與企業弱電設備整合。', legacyHref: '/2160837002.html', service: '從現場評估、佈線到設備整合，建立容易維護的基礎環境。' },
-  { slug: 'security', name: '監視與門禁系統', description: '監視器、錄影設備、門禁、指紋與感應設備。', legacyHref: '/30435352223537320633.html', service: '依照場域需求規劃影像監控與進出管理方案。' },
-  { slug: 'voice-and-video', name: '語音、錄音與會議設備', description: '語音信箱、錄音、視訊會議、投影與協作設備。', legacyHref: '/3548638899--3763638899.html', service: '協助企業改善會議、錄音與日常溝通效率。' },
-  { slug: 'access-control', name: '門禁系統', description: '感應式門禁、指紋機、陽極鎖與出入管理設備。', legacyHref: '/38272311053199532113.html', service: '為辦公室與公共場域建立清楚可控的出入流程。' },
-  { slug: 'surveillance', name: '監視設備', description: '攝影機、錄影主機與周邊監控設備。', legacyHref: '/30435352223537320633.html', service: '提供監視設備選型、安裝與既有系統維護。' }
+  { slug: 'phone-systems', name: '電話總機與交換機', description: '傳統電話總機、IP-PBX、SIP 與企業交換機系統。', legacyHref: '/38651354413231727231-201322556327231.html', service: '電話總機與分機系統規劃、安裝、維修與升級。', features: ['企業電話與分機規劃', 'IP、SIP 與傳統線路整合', '既有系統維修與擴充'] },
+  { slug: 'networking', name: '網路與弱電工程', description: '網路架設、機房整理與企業弱電設備整合。', legacyHref: '/2160837002.html', service: '從現場評估、佈線到設備整合，建立容易維護的基礎環境。', features: ['網路架設與機房整理', '弱電設備整合', '現場檢測與維護'] },
+  { slug: 'security', name: '監視與門禁系統', description: '監視器、錄影設備、門禁、指紋與感應設備。', legacyHref: '/30435352223537320633.html', service: '依照場域需求規劃影像監控與進出管理方案。', features: ['攝影機與錄影設備', '門禁與出入管理', '既有系統升級'] },
+  { slug: 'voice-and-video', name: '語音、錄音與會議設備', description: '語音信箱、錄音、視訊會議、投影與協作設備。', legacyHref: '/3548638899--3763638899.html', service: '協助企業改善會議、錄音與日常溝通效率。', features: ['語音信箱與錄音設備', '視訊會議與投影', '企業協作設備整合'] },
+  { slug: 'access-control', name: '門禁系統', description: '感應式門禁、指紋機、陽極鎖與出入管理設備。', legacyHref: '/38272311053199532113.html', service: '為辦公室與公共場域建立清楚可控的出入流程。', features: ['感應式門禁', '指紋與出入管理', '陽極鎖與周邊設備'] },
+  { slug: 'surveillance', name: '監視設備', description: '攝影機、錄影主機與周邊監控設備。', legacyHref: '/30435352223537320633.html', service: '提供監視設備選型、安裝與既有系統維護。', features: ['攝影機選型', '錄影主機規劃', '監控系統維護'] }
+] as const;
+
+export const blogPosts = [
+  { slug: 'coming-soon', title: '網站內容整理中', excerpt: '我們正在整理企業通訊、電話總機與弱電工程的實務內容，敬請期待。', date: '2026-01-01', category: '公告' }
 ] as const;
